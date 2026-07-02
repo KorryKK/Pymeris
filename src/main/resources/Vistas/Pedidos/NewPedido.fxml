@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" spacing="10.0" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="angel.tfg.pymeris.Views.ManageOrders.CreateOrder.NewOrderController">
+    <BorderPane VBox.vgrow="ALWAYS">
+        <center>
+            <HBox alignment="CENTER" spacing="50.0" BorderPane.alignment="CENTER" VBox.vgrow="ALWAYS">
+                <BorderPane.margin>
+                    <Insets />
+                </BorderPane.margin>
+                <VBox alignment="CENTER" spacing="50.0">
+                    <ProgressIndicator fx:id="piCarga" visible="false" />
+                    <Button alignment="CENTER" onAction="#onCancel" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: transparent;">
+                        <graphic>
+                            <ImageView fitHeight="50.0" fitWidth="50.0" preserveRatio="true">
+                                <Image url="@../../Imagenes/Menú/Back.png" />
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                </VBox>
+                <VBox alignment="CENTER" maxWidth="10560.0" spacing="5.0">
+                    <HBox alignment="TOP_RIGHT">
+                        <Label fx:id="lblCantidad" alignment="CENTER" maxHeight="40.0" maxWidth="150.0" minHeight="40.0" minWidth="150.0" prefHeight="40.0" prefWidth="150.0" style="-fx-border-radius: 100; -fx-border-color: black;" text="CANTIDAD PROD">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                        <Region maxHeight="40.0" maxWidth="150.0" minHeight="40.0" minWidth="150.0" prefHeight="40.0" prefWidth="150.0" />
+                        <Label fx:id="lblSubtotal" alignment="CENTER" maxHeight="40.0" maxWidth="150.0" minHeight="40.0" minWidth="150.0" prefHeight="40.0" prefWidth="150.0" style="-fx-border-radius: 100; -fx-border-color: black;" text="SUB SIN IVA">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                        <Region maxHeight="40.0" maxWidth="150.0" minHeight="40.0" minWidth="150.0" prefHeight="40.0" prefWidth="150.0" />
+                        <Label fx:id="lblTotal" alignment="CENTER" maxHeight="40.0" maxWidth="150.0" minHeight="40.0" minWidth="150.0" prefHeight="40.0" prefWidth="150.0" style="-fx-border-radius: 100; -fx-border-color: black;" text="TOTAL CON IVA">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                    </HBox>
+                    <TableView fx:id="tvProductos" maxWidth="1060.0" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="colIdProducto" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" text="ID PRODUCTO" />
+                            <TableColumn fx:id="colNombre" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" text="NOMBRE" />
+                            <TableColumn fx:id="colCantidad" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" text="CANTIDAD" />
+                            <TableColumn fx:id="colPrecio" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" text="PRECIO" />
+                            <TableColumn fx:id="colSubtotal" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" text="SUBTOTAL SIN IVA" />
+                            <TableColumn fx:id="colIVA" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" text="IVA" />
+                            <TableColumn fx:id="colTotal" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" text="TOTAL CON IVA" />
+                        </columns>
+                    </TableView>
+                </VBox>
+                <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" spacing="75.0">
+                    <HBox.margin>
+                        <Insets bottom="50.0" />
+                    </HBox.margin>
+                    <Button fx:id="btnAnadir" disable="true" maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" mnemonicParsing="false" onAction="#onAddProduct" prefHeight="50.0" prefWidth="150.0" text="AÑADIR PRODUCTO" />
+                    <Button fx:id="btnEliminar" disable="true" layoutX="10.0" layoutY="80.0" maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" mnemonicParsing="false" onAction="#onDeleteProduct" prefHeight="50.0" prefWidth="150.0" text="ELIMINAR PRODUCTO" />
+                    <Button fx:id="btnConfirmar" disable="true" maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" mnemonicParsing="false" onAction="#onCreateOrder" prefHeight="50.0" prefWidth="150.0" style="-fx-border-radius: 100;" text="CONFIRMAR PEDIDO" />
+                </VBox>
+            </HBox>
+        </center>
+        <top>
+            <HBox alignment="TOP_CENTER" spacing="150.0" BorderPane.alignment="CENTER">
+                <BorderPane.margin>
+                    <Insets />
+                </BorderPane.margin>
+                 <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                     <Image url="@../../Imagenes/Logo/Logo_128.png" />
+                 </ImageView>
+            <Label text="NUEVO PEDIDO">
+               <font>
+                  <Font name="System Bold" size="80.0" />
+               </font>
+            </Label>
+                <VBox alignment="CENTER_RIGHT" spacing="20.0">
+                    <Label fx:id="lblInfoEm" text="ID EMPLEADO  + NOMBRE EMPLEADO">
+                        <font>
+                            <Font size="16.0" />
+                        </font>
+                    </Label>
+                    <Label fx:id="lblInfoCl" text="ID CLIENTE + NOMBRE CLIENTE">
+                        <font>
+                            <Font size="16.0" />
+                        </font>
+                    </Label>
+                    <Button mnemonicParsing="false" onAction="#onSelectCliente" text="ELEGIR">
+                        <font>
+                            <Font size="16.0" />
+                        </font>
+                    </Button>
+                    <HBox.margin>
+                        <Insets right="50.0" />
+                    </HBox.margin>
+                </VBox>
+            </HBox>
+        </top>
+    </BorderPane>
+    <padding>
+        <Insets bottom="60.0" left="60.0" right="60.0" top="30.0" />
+    </padding>
+</VBox>

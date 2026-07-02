@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1306.0" spacing="35.0" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="angel.tfg.pymeris.Views.ManageUsers.ManageUsersController">
+    <padding>
+        <Insets bottom="50.0" left="30.0" right="30.0" top="30.0" />
+    </padding>
+      <HBox alignment="CENTER">
+          <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+              <Image url="@../../Imagenes/Menú/Usuarios.png" />
+          </ImageView>
+          <Label text="USUARIOS">
+              <font>
+                  <Font name="System Bold Italic" size="70.0" />
+              </font>
+          </Label>
+      </HBox>
+
+    <VBox VBox.vgrow="ALWAYS">
+        <HBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" spacing="12.0" VBox.vgrow="ALWAYS">
+            <VBox alignment="TOP_CENTER" spacing="50.0">
+                <HBox.margin>
+                    <Insets top="35.0" />
+                </HBox.margin>
+                <Button style="-fx-background-color: transparent;" onAction="#goBackUser">
+                    <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" preserveRatio="true">
+                            <Image url="@../../Imagenes/Menú/Back.png" />
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button style="-fx-background-color: transparent;" onAction="#onCreateUser">
+                    <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" preserveRatio="true">
+                            <Image url="@../../Imagenes/Tablas/Añadir.png" />
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button style="-fx-background-color: transparent;" onAction="#onModifyUser">
+                    <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" preserveRatio="true">
+                            <Image url="@../../Imagenes/Tablas/Editar.png" />
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button style="-fx-background-color: transparent;" onAction="#onRestartPassword">
+                    <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" preserveRatio="true">
+                            <Image url="@../../Imagenes/Tablas/RestartPassword.png" />
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </VBox>
+
+            <ProgressIndicator fx:id="piCarga" visible="false" />
+
+            <BorderPane maxHeight="1.7976931348623157E308">
+                <center>
+                    <TableView fx:id="tvUsuarios" maxHeight="1.7976931348623157E308" BorderPane.alignment="CENTER">
+                        <columns>
+                            <TableColumn fx:id="colId" maxWidth="90.0" minWidth="90.0" prefWidth="90.0" text="ID EMPLEADO" />
+                            <TableColumn fx:id="colNombre" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" text="NOMBRE" />
+                            <TableColumn fx:id="colApellido" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" text="APELLIDO" />
+                            <TableColumn fx:id="colCorreo" maxWidth="175.0" minWidth="120.0" prefWidth="150.0" text="CORREO" />
+                            <TableColumn fx:id="colTelefono" maxWidth="300.0" minWidth="100.0" prefWidth="100.0" text="TELEFONO" />
+                            <TableColumn fx:id="colUser" maxWidth="300.0" minWidth="100.0" prefWidth="100.0" text="USUARIO" />
+                            <TableColumn fx:id="colEstadoUsuario" maxWidth="75.0" minWidth="55.0" prefWidth="55.0" text="ESTADO" />
+                            <TableColumn fx:id="colRol" maxWidth="125.0" minWidth="100.0" prefWidth="100.0" text="ROL" />
+                            <TableColumn fx:id="colFechaRegistro" maxWidth="200.0" minWidth="160.0" prefWidth="160.0" text="REGISTRO" />
+                            <TableColumn fx:id="colFechaModificacion" maxWidth="200.0" minWidth="160.0" prefWidth="160.0" text="MODIFICACIÓN" />
+                            <TableColumn fx:id="colAcceso" maxWidth="60.0" minWidth="50.0" prefWidth="50.0" text="ACCESO" />
+                        </columns>
+                    </TableView>
+                </center>
+                <top>
+                    <VBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
+                        <TextField fx:id="tfSearch" promptText="Busque por nombre o apellido" />
+                        <Region />
+                    </VBox>
+                </top>
+            </BorderPane>
+        </HBox>
+    </VBox>
+</VBox>
