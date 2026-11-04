@@ -68,16 +68,7 @@ Está desarrollada en Java, utiliza JavaFX para la interfaz gráfica y SQLite co
 | JUnit 5 | Pruebas unitarias |
 | Mockito | Simulación de dependencias en pruebas |
 | jBCrypt | Hash de contraseñas |
-| SLF4J | Registro de eventos |
-
-### Librerías adicionales
-
-- ControlsFX
-- FormsFX
-- ValidatorFX
-- Ikonli
-- BootstrapFX
-- TilesFX
+| ControlsFX | Componentes adicionales para JavaFX |
 
 ---
 
@@ -93,25 +84,25 @@ En la capa de presentación se utiliza el patrón **MVP (Model-View-Presenter)**
 Pymeris/
 │
 ├── .mvn/
-│   └── wrapper/                 # Configuración de Maven Wrapper
+│   └── wrapper/                  # Configuración de Maven Wrapper
 │
 ├── src/
 │   ├── main/
 │   │   ├── java/
 │   │   │   └── angel/tfg/pymeris/
 │   │   │       │
-│   │   │       ├── Base/       # Clases e interfaces comunes
+│   │   │       ├── Base/         # Clases e interfaces comunes
 │   │   │       │
 │   │   │       ├── Model/
-│   │   │       │   ├── DAO/        # Acceso directo a la BD
+│   │   │       │   ├── DAO/        # Acceso directo a la base de datos
 │   │   │       │   ├── Entities/   # Entidades del sistema
 │   │   │       │   └── Repository/ # Capa de repositorios
 │   │   │       │
-│   │   │       ├── Util/       # Utilidades generales
+│   │   │       ├── Util/         # Utilidades generales
 │   │   │       │   ├── Enums/
 │   │   │       │   └── Navegation/
 │   │   │       │
-│   │   │       ├── Views/      # Vistas y lógica de presentación
+│   │   │       ├── Views/        # Vistas y lógica de presentación
 │   │   │       │   ├── Login/
 │   │   │       │   ├── ChangePassword/
 │   │   │       │   ├── ManageClients/
@@ -125,11 +116,11 @@ Pymeris/
 │   │   │       └── module-info.java
 │   │   │
 │   │   └── resources/
-│   │       ├── Imagenes/       # Recursos gráficos
-│   │       └── Vistas/         # Interfaces FXML
+│   │       ├── Imagenes/         # Recursos gráficos
+│   │       └── Vistas/           # Interfaces FXML
 │   │
 │   └── test/
-│       └── java/               # Pruebas unitarias
+│       └── java/                 # Pruebas unitarias
 │
 ├── pom.xml
 ├── mvnw
@@ -290,7 +281,7 @@ Se han desarrollado pruebas para diferentes componentes de la aplicación, entre
 - Presentadores de pedidos.
 - Presentadores de usuarios.
 
-Para intentar ejecutar las pruebas:
+Para ejecutar las pruebas:
 
 En Windows:
 
@@ -304,7 +295,7 @@ En Linux o macOS:
 ./mvnw test
 ```
 
-La ejecución de la suite completa todavía debe verificarse en un entorno de desarrollo.
+La ejecución de la suite completa debe verificarse en el entorno de desarrollo.
 
 ---
 
