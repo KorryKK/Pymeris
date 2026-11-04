@@ -11,6 +11,7 @@ public class ClientesDaoImpl {
 
     public static List<Cliente> obtenerTodos(){
         List<Cliente> clientes = new ArrayList<>();
+        //language=SQLite
         String sql = "SELECT * FROM Clientes";
 
         try (Connection conn = Database.conectar();
