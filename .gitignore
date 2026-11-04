@@ -1,9 +1,3 @@
 /.idea/
-/.mvn/
-/src/
 /target/
-.gitignore
 dependency-reduced-pom.xml
-mvnw
-mvnw.cmd
-pom.xml
