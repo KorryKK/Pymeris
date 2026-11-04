@@ -206,7 +206,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>angel.tfg.pymeris/angel.tfg.pymeris.HelloApplication</mainClass>
+                            <mainClass>angel.tfg.pymeris/angel.tfg.pymeris.Launcher</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>
