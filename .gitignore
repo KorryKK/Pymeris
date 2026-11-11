@@ -1,3 +1,8 @@
 /.idea/
 /target/
 dependency-reduced-pom.xml
+/empaquetado/
+/salida/
+/instalador/
+Pymeris.iml
+PasosInstalador.txt
